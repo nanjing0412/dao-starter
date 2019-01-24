@@ -1,4 +1,4 @@
-package com.github.jun.starter.dao;
+package com.github.jun.starter.dao.demo;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

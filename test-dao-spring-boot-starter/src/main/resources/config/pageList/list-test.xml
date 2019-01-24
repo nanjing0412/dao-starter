@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="test" class="com.github.jun.starter.dao.dsp.sqlHandle.SqlConfigure">
+        <property name="adapters">
+            <map>
+
+                <entry key="getBuyerList">
+                    <bean class="com.github.jun.starter.dao.dsp.sqlHandle.Adapter">
+                        <property name="dbType">
+                            <value>mysql</value>
+                        </property>
+                        <property name="showSql">
+                            <value>true</value>
+                        </property>
+                        <property name="sql">
+                            <value>
+                                select buyer_id, buyer_name
+                                from dchn_agent_buyer
+                                where 1=1
+                                /~buyer_name: and instr(buyer_name,{buyer_name})>0 ~/
+                            </value>
+                        </property>
+                    </bean>
+                </entry>
+
+            </map>
+        </property>
+    </bean>
+
+</beans>

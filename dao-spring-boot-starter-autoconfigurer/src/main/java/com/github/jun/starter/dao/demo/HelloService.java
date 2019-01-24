@@ -1,4 +1,6 @@
-package com.github.jun.starter.dao;
+package com.github.jun.starter.dao.demo;
+
+import com.github.jun.starter.dao.demo.HelloProperties;
 
 /**
  * @author: hujw
