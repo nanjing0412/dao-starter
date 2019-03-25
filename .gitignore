@@ -1,2 +1,5 @@
 *.iml
 /.idea
+dao-spring-boot-starter/target/*
+dao-spring-boot-starter-autoconfigurer/target/*
+test-dao-spring-boot-starter/target/*
