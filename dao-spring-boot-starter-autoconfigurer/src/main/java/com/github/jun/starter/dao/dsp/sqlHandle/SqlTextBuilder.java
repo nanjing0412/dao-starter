@@ -1,5 +1,7 @@
 package com.github.jun.starter.dao.dsp.sqlHandle;
 
+import com.github.jun.starter.dao.dsp.util.PageParams;
+import com.github.jun.starter.dao.dsp.util.SQLUtil;
 import com.github.jun.starter.dao.dsp.util.SpringHolder;
 import lombok.Getter;
 import lombok.Setter;
@@ -57,6 +59,14 @@ public class SqlTextBuilder {
             this.querySql = sqlQueryParams.getSql().toString().replace("\t", " ").replace("\n", " ").trim();
             this.queryParams = sqlQueryParams.getParams();
         }
+    }
+
+    public String getQueryPagingSql(PageParams pageParams) {
+        return SQLUtil.builderPageSQL(this.querySql, this.adapter.getDbType(), pageParams);
+    }
+
+    public String getCountEntiesSql() {
+        return SQLUtil.builderCountSQL(this.querySql);
     }
 
 }

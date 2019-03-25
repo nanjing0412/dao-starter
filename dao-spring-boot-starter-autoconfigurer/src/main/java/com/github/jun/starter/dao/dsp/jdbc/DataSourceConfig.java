@@ -2,6 +2,7 @@ package com.github.jun.starter.dao.dsp.jdbc;
 
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -28,5 +29,14 @@ public class DataSourceConfig {
         dataSourceMap.put("mysql", mysqlDataSource);
         return mysqlDataSource;
     }
+
+//    @Bean(name = "forJdbcDataSource")
+//    @ConfigurationProperties("spring.datasource.for-jdbc")
+//    @ConditionalOnMissingBean(name = "forJdbcDataSource")
+//    public DataSource mysqlDataSource() {
+//        DataSource mysqlDataSource = DataSourceBuilder.create().build();
+//        dataSourceMap.put("mysql", mysqlDataSource);
+//        return mysqlDataSource;
+//    }
 
 }

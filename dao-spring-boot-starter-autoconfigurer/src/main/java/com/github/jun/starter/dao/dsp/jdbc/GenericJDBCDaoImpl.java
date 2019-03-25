@@ -51,4 +51,22 @@ public class GenericJDBCDaoImpl extends JdbcDaoSupport {
         return this.getJdbcTemplate().queryForList(sql, params);
     }
 
+    public <T> T findForObject(String sql, Object[] params, Class<T> requiredType) {
+        logger.info("sql:" + sql);
+        logger.info("sql-params:" + Arrays.toString(params));
+        return this.getJdbcTemplate().queryForObject(sql, params, requiredType);
+    }
+
+    public int updateBySql(String sql, Object[] params) {
+        logger.info("sql:" + sql);
+        logger.info("sql-params:" + Arrays.toString(params));
+        return this.getJdbcTemplate().update(sql, params);
+    }
+
+    public int[] batchUpdateBySql(String sql, List<Object[]> paramsList) {
+        logger.info("sql:" + sql);
+        logger.info("sql-params:" + paramsList);
+        return this.getJdbcTemplate().batchUpdate(sql, paramsList);
+    }
+
 }
