@@ -1,6 +1,15 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    jdbc-url: jdbc:mysql://localhost:3307/yxdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull
+#    username: root
+#    password: root
+
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    jdbc-url: jdbc:mysql://localhost:3307/yxdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: root
+    for-jdbc:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: consult
+      password: Zv_consult
+      #url jdbc-url
+      jdbc-url: jdbc:mysql://localhost:3306/consult_erp_dev1_1?useUnicode=true&characterEncoding=UTF-8&useSSL=false&jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull

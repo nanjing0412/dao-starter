@@ -27,6 +27,62 @@
                     </bean>
                 </entry>
 
+                <entry key="testGetList">
+                    <bean class="com.github.jun.starter.dao.dsp.sqlHandle.Adapter">
+                        <property name="dbType">
+                            <value>mysql</value>
+                        </property>
+                        <property name="showSql">
+                            <value>true</value>
+                        </property>
+                        <property name="sql">
+                            <value>
+                                select mobile,username
+                                from tb_user
+                                where 1=1
+                                /~username: and instr(username, {username}) > 0 ~/
+                            </value>
+                        </property>
+                    </bean>
+                </entry>
+
+                <entry key="testGetObject">
+                    <bean class="com.github.jun.starter.dao.dsp.sqlHandle.Adapter">
+                        <property name="dbType">
+                            <value>mysql</value>
+                        </property>
+                        <property name="showSql">
+                            <value>true</value>
+                        </property>
+                        <property name="sql">
+                            <value>
+                                select username
+                                from tb_user
+                                where 1=1
+                                /~id: and id = {id} ~/
+                            </value>
+                        </property>
+                    </bean>
+                </entry>
+
+                <entry key="testUpdate">
+                    <bean class="com.github.jun.starter.dao.dsp.sqlHandle.Adapter">
+                        <property name="dbType">
+                            <value>mysql</value>
+                        </property>
+                        <property name="showSql">
+                            <value>true</value>
+                        </property>
+                        <property name="sql">
+                            <value>
+                                update tb_user
+                                set username = {username}
+                                where id = {id}
+                            </value>
+                        </property>
+                    </bean>
+                </entry>
+
             </map>
         </property>
     </bean>
